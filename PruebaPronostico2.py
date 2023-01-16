@@ -52,18 +52,23 @@ for i in range(0,31): # Proceso que se repetira 31 veces ya que son los dias de 
 
 
     
-sumcuadrados=sum(cuadrado)    
-sumxXy=sum(xXy)    
-n=len(diaoct)
+sumcuadrados=sum(cuadrado) # Sumatoria de todos los x²  
+sumxXy=sum(xXy)   # Sumatoria de todos los valores de x * y
+n=len(diaoct) # Se obtiene la longitud de los dias 
 
-a=((n*sumxXy)-(sumdias*sumcasos))/((n*sumcuadrados)-(sumdias*sumdias))
+a=((n*sumxXy)-(sumdias*sumcasos))/((n*sumcuadrados)-(sumdias*sumdias)) # Se aplica en conjunto la formula para obtener a
+# con los valores obtenidos
 
-b=(sumcasos-(a*sumdias))/n
+b=(sumcasos-(a*sumdias))/n # Se aplica en conjunto la formula para obtener b
+# con los valores obtenidos
 
-for j in range(31,61):
-    x=float(j)
-    y=a*x+b
-    casosp.append(y)
+
+
+for j in range(31,61): # Proceso que re repite 30 veces ya que son los dias de noviembre los que queremos saber
+    # pero como ya se habian ocupado dias anteriores para octubre se inicia en 32
+    x=float(j)  # se convierte a j en float para que pueda trabajar con decimales 
+    y=a*x+b # Se aplica la formula final y = ax + b  para todos los dias de noviembre
+    casosp.append(y) # Se agregan los valores a esta lista 
     
    
    
@@ -83,6 +88,8 @@ ax=plt.gca()
 ax.set_xlabel("Dias (Noviembre)")
 ax.set_ylabel("Casos Acumulados")
 plt.show()
+
+
 
 
 
